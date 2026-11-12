@@ -1,0 +1,25 @@
+Paper: Leveraging Feature Selection and Ensemble Learning to Predict Secondary School Achievement: A Comparative Study of Three Grade Granularities (Galiatsatos & Galiatsatou, Information, 2026)
+
+Summary of the Abstract 
+
+Goal: Predicting student achievement early helps schools find at-risk students and help them in time.
+Data: The study uses the Math Students dataset from two Portuguese secondary schools. It predicts the final grade in three ways: three levels (low, medium, high), four labels (fail, satisfactory, good, excellent), and pass or fail.
+Method: The authors first reduce the number of features with three filter methods: CFS, Correlation Attribute Evaluation and Information Gain. Then they test nine classifiers, including Naive Bayes, MLP, Random Forest and Bagging, with ten-fold cross-validation in Weka.
+Results:
+Random Forest with Information Gain reached 90.7% accuracy on the three-level task.
+Bagging with Information Gain reached 92.5% on pass/fail.
+Both outperform results from earlier studies.
+Main finding: First- and second-period grades and past failures are the strongest predictors. Ensemble models work best when combined with feature selection, which removes noise and keeps the relevant features.
+
+Summary of the Conclusion
+
+Best models: Ensemble classifiers (Random Forest and Bagging) gave the highest accuracy in every setup, because they handle noise, repeated information and complex feature interactions well.
+Feature selection: Information Gain worked well, especially on the harder multiclass tasks. CFS helped algorithms that struggle with correlated or many features, such as k-NN and linear models.
+Key predictors: Previous grades and failure history matter most. Parents’ education and occupation, early schooling and extra educational support also help.
+Without previous grades: Accuracy drops a lot, but family and behavior data still give moderate predictions, for example with Bagging plus Information Gain.
+Use in practice: Fixed factors, such as family background and past failures, can flag vulnerable students before the year starts. Changing factors, such as absences and behavior, can update the risk during the semester. Models can also find students with average grades who are still at risk, which teachers may not notice.
+Recommended approach: Use two layers. Strong ensemble models do early warning. Simple, readable models such as pruned decision trees give clear rules for teachers and policy.
+Limitations: The data comes from one benchmark dataset in Portugal (0–20 grades), and the evaluation uses cross-validation within that dataset only. Results may differ in other education systems, so future work should test on other datasets, schools, and years.
+Overall: Feature selection plus ensemble learning is a reliable approach for predicting school achievement.
+
+One-sentence version: The study shows that combining feature selection, mainly Information Gain, with ensemble models such as Random Forest and Bagging predicts student performance with over 90% accuracy, with prior grades as the strongest signal, though it should be tested on other datasets.
